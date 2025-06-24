@@ -8,7 +8,7 @@ import { Button } from '@/lib/ui'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/lib/ui'
 import { Input } from '@/lib/ui'
 import { Label } from '@/lib/ui'
-import { loginSchema, type LoginInput } from '@church-admin/shared'
+import { loginSchema, type LoginInput } from '@/lib/schemas/auth'
 
 export default function LoginPage() {
   const router = useRouter()
