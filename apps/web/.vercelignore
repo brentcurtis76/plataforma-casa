@@ -1,0 +1,17 @@
+# Ignore test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__
+__mocks__
+coverage
+.turbo
+
+# Ignore docs
+*.md
+!README.md
+
+# Development files
+.env.local
+.env.development

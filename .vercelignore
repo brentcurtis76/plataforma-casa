@@ -1,0 +1,29 @@
+# Ignore test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+**/tests
+**/test
+**/__tests__
+**/__mocks__
+
+# Ignore documentation
+*.md
+docs
+documentation
+
+# Ignore development files
+.env.local
+.env.development
+.vscode
+.idea
+
+# Ignore large dependencies
+playwright-report
+.turbo
+.next/cache
+
+# Ignore non-web apps
+apps/mobile
+packages/*/node_modules
