@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import { Button } from '@church-admin/ui';
+import { Button } from '@/lib/ui';
 
 interface BottomSheetProps {
   isOpen: boolean;

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Card } from '@church-admin/ui';
+import { Card } from '@/lib/ui';
 import { Sparkles, Clock, TrendingUp } from 'lucide-react';
 import { EMOTIONS } from '@/lib/ai/scripture-selector';
 import { getEmotionRecommendations } from '@/lib/services/meditation-extras';

@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@church-admin/ui'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/lib/ui'
 import { Users, Calendar, Receipt, Presentation } from 'lucide-react'
 
 export default async function DashboardPage() {

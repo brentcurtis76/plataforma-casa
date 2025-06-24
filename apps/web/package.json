@@ -13,9 +13,10 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@church-admin/database": "workspace:*",
-    "@church-admin/shared": "workspace:*",
-    "@church-admin/ui": "workspace:*",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.3.0",
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",

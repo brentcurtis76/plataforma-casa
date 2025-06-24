@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
-import { Button, Input, Label, Textarea } from '@church-admin/ui';
+import { Button, Input, Label, Textarea } from '@/lib/ui';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 

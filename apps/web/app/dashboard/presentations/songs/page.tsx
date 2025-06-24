@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
-import { Button, Input, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@church-admin/ui';
+import { Button, Input, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/lib/ui';
 import { PlusCircle, Search, Edit, Trash2 } from 'lucide-react';
 
 interface Song {
