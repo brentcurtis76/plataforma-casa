@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@church-admin/ui": ["./packages/ui/src"],
+      "@church-admin/database": ["./packages/database/src"],
+      "@church-admin/api-client": ["./packages/api-client/src"],
+      "@church-admin/shared": ["./packages/shared/src"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
