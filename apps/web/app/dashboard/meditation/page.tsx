@@ -112,11 +112,10 @@ export default function MeditationPage() {
   // Prepare emotions data for accessible components
   const emotionsForGrid = Object.entries(EMOTIONS).map(([key, value]) => {
     const config = EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG];
-    const Icon = config.icon;
     return {
       key,
       label: value.es,
-      icon: <Icon className="h-6 w-6" />,
+      Icon: config.icon,
       color: config.color
     };
   });
@@ -125,30 +124,39 @@ export default function MeditationPage() {
   const emotionCategories = [
     {
       title: 'Emociones Positivas',
-      emotions: ['joy', 'peace', 'gratitude', 'hope', 'love'].map(key => ({
-        key,
-        label: EMOTIONS[key as keyof typeof EMOTIONS].es,
-        icon: <EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG].icon className="h-6 w-6" />,
-        color: EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG].color
-      }))
+      emotions: ['joy', 'peace', 'gratitude', 'hope', 'love'].map(key => {
+        const config = EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG];
+        return {
+          key,
+          label: EMOTIONS[key as keyof typeof EMOTIONS].es,
+          Icon: config.icon,
+          color: config.color
+        };
+      })
     },
     {
       title: 'Emociones Desafiantes',
-      emotions: ['anxiety', 'fear', 'sadness', 'anger', 'loneliness'].map(key => ({
-        key,
-        label: EMOTIONS[key as keyof typeof EMOTIONS].es,
-        icon: <EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG].icon className="h-6 w-6" />,
-        color: EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG].color
-      }))
+      emotions: ['anxiety', 'fear', 'sadness', 'anger', 'loneliness'].map(key => {
+        const config = EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG];
+        return {
+          key,
+          label: EMOTIONS[key as keyof typeof EMOTIONS].es,
+          Icon: config.icon,
+          color: config.color
+        };
+      })
     },
     {
       title: 'Estados Espirituales',
-      emotions: ['doubt', 'confusion', 'guilt', 'weakness', 'seeking'].map(key => ({
-        key,
-        label: EMOTIONS[key as keyof typeof EMOTIONS].es,
-        icon: <EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG].icon className="h-6 w-6" />,
-        color: EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG].color
-      }))
+      emotions: ['doubt', 'confusion', 'guilt', 'weakness', 'seeking'].map(key => {
+        const config = EMOTION_CONFIG[key as keyof typeof EMOTION_CONFIG];
+        return {
+          key,
+          label: EMOTIONS[key as keyof typeof EMOTIONS].es,
+          Icon: config.icon,
+          color: config.color
+        };
+      })
     }
   ];
 
@@ -201,13 +209,28 @@ export default function MeditationPage() {
                 
                 {isMobile ? (
                   <SwipeableEmotionSelector
-                    categories={emotionCategories}
+                    categories={emotionCategories.map(category => ({
+                      ...category,
+                      emotions: category.emotions.map(emotion => {
+                        const EmotionIcon = emotion.Icon;
+                        return {
+                          ...emotion,
+                          icon: <EmotionIcon className="h-6 w-6" />
+                        };
+                      })
+                    }))}
                     selectedEmotion={selectedEmotion}
                     onSelect={handleEmotionSelect}
                   />
                 ) : (
                   <AccessibleEmotionGrid
-                    emotions={emotionsForGrid}
+                    emotions={emotionsForGrid.map(emotion => {
+                      const EmotionIcon = emotion.Icon;
+                      return {
+                        ...emotion,
+                        icon: <EmotionIcon className="h-6 w-6" />
+                      };
+                    })}
                     selectedEmotion={selectedEmotion}
                     onSelect={handleEmotionSelect}
                   />
@@ -345,6 +368,7 @@ export default function MeditationPage() {
           </p>
           <p className="text-sm text-gray-600 mt-2">— Salmos 34:18</p>
         </div>
-    </div>
+      </div>
+    </>
   );
 }

@@ -52,8 +52,8 @@ export default async function AccountingPage() {
   let totalIncome = 0
   let totalExpenses = 0
 
-  transactions?.forEach(transaction => {
-    transaction.church_transaction_lines?.forEach(line => {
+  transactions?.forEach((transaction: any) => {
+    transaction.church_transaction_lines?.forEach((line: any) => {
       if (line.church_accounts?.type === 'revenue') {
         totalIncome += Number(line.credit) || 0
       } else if (line.church_accounts?.type === 'expense') {

@@ -75,7 +75,9 @@ function Hero() {
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement.style.background = '#f3f4f6';
+                      if (e.currentTarget.parentElement) {
+                        e.currentTarget.parentElement.style.background = '#f3f4f6';
+                      }
                     }}
                   />
                 </div>
@@ -86,7 +88,9 @@ function Hero() {
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement.style.background = '#f3f4f6';
+                      if (e.currentTarget.parentElement) {
+                        e.currentTarget.parentElement.style.background = '#f3f4f6';
+                      }
                     }}
                   />
                 </div>
@@ -99,7 +103,9 @@ function Hero() {
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement.style.background = '#f3f4f6';
+                      if (e.currentTarget.parentElement) {
+                        e.currentTarget.parentElement.style.background = '#f3f4f6';
+                      }
                     }}
                   />
                 </div>
@@ -110,7 +116,9 @@ function Hero() {
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement.style.background = '#f3f4f6';
+                      if (e.currentTarget.parentElement) {
+                        e.currentTarget.parentElement.style.background = '#f3f4f6';
+                      }
                     }}
                   />
                 </div>

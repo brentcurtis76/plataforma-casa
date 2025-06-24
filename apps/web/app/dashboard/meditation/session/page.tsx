@@ -49,30 +49,6 @@ function MeditationSessionContent() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressInterval = useRef<NodeJS.Timeout | null>(null);
 
-  const { execute: executeGeneration, retry: retryGeneration, retryCount } = useRetry(
-    generateMeditation,
-    {
-      maxRetries: 3,
-      onError: (err, attempt) => {
-        console.error(`Generation failed (attempt ${attempt}):`, err);
-        setError(err);
-      }
-    }
-  );
-
-  useEffect(() => {
-    executeGeneration();
-    
-    // Check if mobile
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   const generateMeditation = async () => {
     try {
       setLoading(true);
@@ -145,6 +121,30 @@ function MeditationSessionContent() {
       setTimeout(() => setLoading(false), 500); // Brief delay to show "ready" state
     }
   };
+
+  const { execute: executeGeneration, retry: retryGeneration, retryCount } = useRetry(
+    generateMeditation,
+    {
+      maxRetries: 3,
+      onError: (err, attempt) => {
+        console.error(`Generation failed (attempt ${attempt}):`, err);
+        setError(err);
+      }
+    }
+  );
+
+  useEffect(() => {
+    executeGeneration();
+    
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const useFallbackContent = () => {
     setError(null);
@@ -302,7 +302,7 @@ function MeditationSessionContent() {
   return (
     <>
       <NetworkStatus />
-    <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-8">
       {/* Header */}
       <div className="flex items-center justify-between">
         <Button
@@ -428,6 +428,7 @@ function MeditationSessionContent() {
         </div>
       </Card>
     </div>
+    </>
   );
 }
 

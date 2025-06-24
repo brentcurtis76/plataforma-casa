@@ -72,7 +72,7 @@ export default function MeditationHistoryPage() {
         }, {} as Record<string, number>);
 
         const favoriteEmotion = Object.entries(emotionCounts)
-          .sort(([, a], [, b]) => b - a)[0]?.[0] || '';
+          .sort(([, a], [, b]) => (b as number) - (a as number))[0]?.[0] || '';
 
         const ratingsCount = sessionsData.filter(s => s.user_feedback).length;
         const averageRating = ratingsCount > 0

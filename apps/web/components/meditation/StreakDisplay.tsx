@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { Card } from '@church-admin/ui';
 import { Flame, TrendingUp, Calendar, Award } from 'lucide-react';

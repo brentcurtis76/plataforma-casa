@@ -48,7 +48,7 @@ export default async function ReportsPage() {
   const accountBalances = accounts?.map(account => {
     let balance = 0
     
-    account.church_transaction_lines?.forEach(line => {
+    account.church_transaction_lines?.forEach((line: any) => {
       if (line.church_transactions?.status === 'posted' && 
           line.church_transactions?.organization_id === profile.organization_id) {
         // For assets and expenses, debits increase, credits decrease

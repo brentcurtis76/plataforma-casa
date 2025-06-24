@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { Card } from '@church-admin/ui';
 import { Sparkles, Clock, TrendingUp } from 'lucide-react';
@@ -191,14 +193,13 @@ export function QuickMeditation({ onStart }: QuickMeditationProps) {
 
   if (!lastEmotion) return null;
 
-  const config = getEmotionConfig(lastEmotion);
   const emotionLabel = EMOTIONS[lastEmotion as keyof typeof EMOTIONS]?.es || lastEmotion;
 
   return (
     <Card className="p-4 bg-gradient-to-r from-indigo-50 to-purple-50">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="text-3xl">{config.icon}</div>
+          <div className="text-3xl">💫</div>
           <div>
             <p className="text-sm text-gray-600">Continuar con</p>
             <p className="font-semibold">{emotionLabel}</p>

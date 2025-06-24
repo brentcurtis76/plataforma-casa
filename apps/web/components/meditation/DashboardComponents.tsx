@@ -1,3 +1,5 @@
+'use client';
+
 import { Card } from '@church-admin/ui';
 import { EMOTIONS } from '@/lib/ai/scripture-selector';
 

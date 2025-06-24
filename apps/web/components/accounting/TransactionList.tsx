@@ -47,7 +47,7 @@ export function TransactionList({ transactions }: TransactionListProps) {
       voided: { label: 'Anulado', variant: 'destructive' as const },
     }
     
-    const statusInfo = statusMap[status] || statusMap.pending
+    const statusInfo = statusMap[status as keyof typeof statusMap] || statusMap.pending
     
     return (
       <Badge variant={statusInfo.variant}>

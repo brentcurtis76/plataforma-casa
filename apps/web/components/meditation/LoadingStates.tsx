@@ -1,3 +1,5 @@
+'use client';
+
 import { Loader2, BookOpen, Mic, Music } from 'lucide-react';
 
 interface LoadingStep {

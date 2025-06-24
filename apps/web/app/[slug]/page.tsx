@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import ChurchHeader from '@/components/church/Header'
-import ChurchHero from '@/components/church/Hero'
-import ChurchFooter from '@/components/church/Footer'
+import { Header as ChurchHeader } from '@/components/church/Header'
+import { Hero as ChurchHero } from '@/components/church/Hero'
+import { Footer as ChurchFooter } from '@/components/church/Footer'
 
 export default async function ChurchHomePage({
   params,
@@ -79,19 +79,11 @@ export default async function ChurchHomePage({
 
   return (
     <>
-      <ChurchHeader organizationSlug={slug} user={user} />
+      <ChurchHeader />
       
       <main>
         {/* Hero Section */}
-        <ChurchHero
-          welcomeBadge={heroSection?.welcome_badge}
-          headline={heroSection?.headline || organization.name}
-          subheadline={heroSection?.subheadline}
-          ctaPrimaryText={heroSection?.cta_primary_text}
-          ctaPrimaryLink={heroSection?.cta_primary_link}
-          ctaSecondaryText={heroSection?.cta_secondary_text}
-          ctaSecondaryLink={heroSection?.cta_secondary_link}
-        />
+        <ChurchHero />
 
         {/* About Section */}
         {aboutSection && (
@@ -219,16 +211,7 @@ export default async function ChurchHomePage({
         </section>
       </main>
 
-      <ChurchFooter
-        organizationName={organization.name}
-        organizationSlug={slug}
-        contact={{
-          address: contactInfo?.address,
-          phone: contactInfo?.phone,
-          email: contactInfo?.email,
-        }}
-        schedule={formattedSchedule}
-      />
+      <ChurchFooter />
     </>
   )
 }
