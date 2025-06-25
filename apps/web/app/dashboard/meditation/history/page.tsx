@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
-import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/lib/ui';
+import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@church-admin/ui';
 import { EMOTIONS } from '@/lib/ai/scripture-selector';
 import { 
   ArrowLeft, 

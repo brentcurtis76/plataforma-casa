@@ -9,8 +9,8 @@ import {
   TableHead, 
   TableHeader, 
   TableRow 
-} from '@/lib/ui'
-import { Badge } from '@/lib/ui'
+} from '@church-admin/ui'
+import { Badge } from '@church-admin/ui'
 import { Edit, Trash2 } from 'lucide-react'
 import Link from 'next/link'
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Card } from '@/lib/ui';
+import { Button, Card } from '@church-admin/ui';
 import { MessageSquare, X, Heart } from 'lucide-react';
 
 interface FeedbackCollectorProps {

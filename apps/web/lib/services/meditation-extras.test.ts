@@ -109,8 +109,8 @@ describe('meditation-extras service', () => {
       try {
         await trackEmotionUsage('peace');
       } catch (error) {
-        expect(error.message).toBe('Failed to track emotion usage');
-        expect(error.message).not.toContain('xyz123');
+        expect((error as Error).message).toBe('Failed to track emotion usage');
+        expect((error as Error).message).not.toContain('xyz123');
       }
     });
   });

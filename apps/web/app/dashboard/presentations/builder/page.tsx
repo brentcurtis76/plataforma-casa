@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
-import { Button, Input, Label } from '@/lib/ui';
+import { Button, Input, Label } from '@church-admin/ui';
 import { ArrowLeft, Plus, Trash2, GripVertical, Music, Type, Image, FileText, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import {

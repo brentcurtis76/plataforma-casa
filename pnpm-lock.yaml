@@ -51,9 +51,6 @@ importers:
 
   apps/web:
     dependencies:
-      '@church-admin/database':
-        specifier: workspace:*
-        version: link:../../packages/database
       '@church-admin/shared':
         specifier: workspace:*
         version: link:../../packages/shared
@@ -69,21 +66,6 @@ importers:
       '@dnd-kit/utilities':
         specifier: ^3.2.2
         version: 3.2.2(react@19.1.0)
-      '@radix-ui/react-dialog':
-        specifier: ^1.0.5
-        version: 1.1.14(@types/react-dom@19.1.6)(@types/react@19.1.8)(react-dom@19.1.0)(react@19.1.0)
-      '@radix-ui/react-dropdown-menu':
-        specifier: ^2.0.6
-        version: 2.1.15(@types/react-dom@19.1.6)(@types/react@19.1.8)(react-dom@19.1.0)(react@19.1.0)
-      '@radix-ui/react-label':
-        specifier: ^2.0.2
-        version: 2.1.7(@types/react-dom@19.1.6)(@types/react@19.1.8)(react-dom@19.1.0)(react@19.1.0)
-      '@radix-ui/react-select':
-        specifier: ^2.0.0
-        version: 2.2.5(@types/react-dom@19.1.6)(@types/react@19.1.8)(react-dom@19.1.0)(react@19.1.0)
-      '@radix-ui/react-slot':
-        specifier: ^1.0.2
-        version: 1.2.3(@types/react@19.1.8)(react@19.1.0)
       '@radix-ui/react-tabs':
         specifier: ^1.0.4
         version: 1.1.12(@types/react-dom@19.1.6)(@types/react@19.1.8)(react-dom@19.1.0)(react@19.1.0)
@@ -102,12 +84,6 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.45.0
         version: 5.81.2(react@19.1.0)
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.1
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       date-fns:
         specifier: ^3.6.0
         version: 3.6.0
@@ -119,7 +95,7 @@ importers:
         version: 15.3.4(@babel/core@7.27.4)(@playwright/test@1.53.1)(react-dom@19.1.0)(react@19.1.0)
       openai:
         specifier: ^5.7.0
-        version: 5.7.0(zod@3.25.67)
+        version: 5.7.0
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -132,12 +108,6 @@ importers:
       recharts:
         specifier: ^2.12.7
         version: 2.15.4(react-dom@19.1.0)(react@19.1.0)
-      tailwind-merge:
-        specifier: ^2.3.0
-        version: 2.6.0
-      zod:
-        specifier: ^3.23.8
-        version: 3.25.67
       zustand:
         specifier: ^4.5.2
         version: 4.5.7(@types/react@19.1.8)(react@19.1.0)
@@ -6979,7 +6949,7 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
-  /openai@5.7.0(zod@3.25.67):
+  /openai@5.7.0:
     resolution: {integrity: sha512-zXWawZl6J/P5Wz57/nKzVT3kJQZvogfuyuNVCdEp4/XU2UNrjL7SsuNpWAyLZbo6HVymwmnfno9toVzBhelygA==}
     hasBin: true
     peerDependencies:
@@ -6990,8 +6960,6 @@ packages:
         optional: true
       zod:
         optional: true
-    dependencies:
-      zod: 3.25.67
     dev: false
 
   /optionator@0.9.4:

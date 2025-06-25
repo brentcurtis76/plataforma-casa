@@ -34,7 +34,7 @@ cd ~/Documents/Plataforma CASA/church-admin/apps/web
 npm run dev
 ```
 
-## Current Status (June 23, 2025)
+## Current Status (June 24, 2025)
 
 ### ✅ Completed
 1. **Phase 1: Foundation** - COMPLETE
@@ -43,13 +43,11 @@ npm run dev
    - Dashboard with sidebar navigation
    - Role-based access (admin, treasurer, presenter, member)
 
-2. **Phase 2: Accounting Module** - PARTIALLY COMPLETE
-   - Database schema for double-entry bookkeeping
-   - Accounting dashboard with transaction list
-   - Create new transactions with validation
-   - Financial reports (Income Statement, Balance Sheet)
-   - Transaction management with status tracking
-   - Chart of accounts created with Chilean church structure
+2. **Phase 2: Accounting Module** - PAUSED (Wrong approach)
+   - Created complex double-entry system
+   - But church uses simple Excel cash tracking
+   - Need complete redesign to match their workflow
+   - See: FINANCE_REPORT_ANALYSIS.md
 
 3. **Landing Page** - COMPLETE
    - Copied design from casa-web GitHub repository
@@ -58,21 +56,44 @@ npm run dev
    - Multiple content sections
    - Responsive design
 
-### 🚧 In Progress
-- Need to adjust finance structure to match PDF reference: `/Users/brentcurtis76/Documents/Plataforma CASA/Referencias/5-INFORMEFINANZAS-AMAYO2025(1).pdf`
-- User stopped the implementation of chart updates - need to review PDF first
-- Current approach was not aligned with their manual process
+4. **Phase 2.5: Meditation Module** - COMPLETE (Code ready)
+   - All components created and tested locally
+   - Fixed all TypeScript and build errors
+   - OpenAI integration configured
+   - Timer, emotion selection, scripture recommendations working
 
-### 📋 Todo
-- Review PDF finance report and understand current manual process
-- Adjust accounting module to match their actual workflow
-- Expense report submission with receipt upload
-- Chilean bank API integration
-- Phase 3: Presentation System
-- Phase 4: AI Meditation
-- Phase 5: Mobile App
+### 🚧 Current Issues (June 24, 2025)
+1. **Deployment Blocked**:
+   - Vercel doesn't support npm workspaces (monorepo)
+   - Had to flatten structure, losing clean architecture
+   - Latest error: Build succeeds but Vercel path configuration wrong
+   - Decision: Switch to Railway tomorrow
+
+2. **Temporary Fixes Applied**:
+   - Removed workspace dependencies
+   - Created local auth schemas
+   - Copied UI components to avoid shared packages
+   - Lost benefits of monorepo architecture
+
+### 📋 Todo (June 25, 2025)
+1. **Railway Deployment** (Priority)
+   - Set up Railway account
+   - Deploy with proper monorepo structure
+   - Restore clean architecture
+   - Test meditation feature live
+
+2. **After Deployment**:
+   - Test full meditation flow
+   - Start Phase 3 meditation features (audio, music)
+   - Eventually redesign accounting to match Excel workflow
 
 ## Technical Details
+
+### Deployment Configuration Issues
+- **Monorepo Structure**: Uses npm workspaces (not supported by Vercel)
+- **Packages**: web, database, shared (requires proper monorepo deployment)
+- **Current Vercel Config**: Flattened structure loses architectural benefits
+- **Solution**: Railway supports monorepos natively
 
 ### Database Tables Created
 - `church_organizations` - Multi-tenant support
@@ -82,26 +103,46 @@ npm run dev
 - `church_transaction_lines` - Double-entry lines
 - `church_expense_reports` - Expense tracking
 - `church_expense_items` - Expense details
+- `church_meditation_sessions` - Meditation history (ready to create)
+- `church_meditation_preferences` - User preferences (ready to create)
 
 ### Key Components
+**Dashboard & Core:**
 - `/components/dashboard/Sidebar.tsx` - Collapsible navigation
-- `/components/accounting/TransactionList.tsx` - Transaction display
-- `/components/accounting/IncomeStatement.tsx` - P&L report
-- `/components/accounting/BalanceSheet.tsx` - Balance sheet
 - `/components/church/Hero.tsx` - Landing page hero
 - `/components/church/Header.tsx` - Public site header
 
-### UI Components Added
-- Badge
-- Table (with all sub-components)
-- Textarea
-- Select (exists)
-- Dialog (exists)
+**Accounting (Paused):**
+- `/components/accounting/TransactionList.tsx` - Transaction display
+- `/components/accounting/IncomeStatement.tsx` - P&L report
+- `/components/accounting/BalanceSheet.tsx` - Balance sheet
+
+**Meditation (Complete):**
+- `/components/meditation/EmotionSelector.tsx` - Emotion selection UI
+- `/components/meditation/Timer.tsx` - Meditation timer
+- `/components/meditation/ScriptureDisplay.tsx` - Scripture viewer
+- `/components/meditation/StreakDisplay.tsx` - Progress tracking
+- `/components/meditation/LoadingStates.tsx` - Loading animations
+- All components tested and working locally
+
+### Environment Variables
+```env
+# Supabase (configured)
+NEXT_PUBLIC_SUPABASE_URL=https://sxlogxqzmarhqsblxmtj.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+
+# OpenAI (configured in Vercel)
+OPENAI_API_KEY=sk-proj-...
+
+# Eleven Labs (for Phase 3)
+ELEVEN_LABS_API_KEY=pending
+```
 
 ### Important Notes
-- Chart of accounts migration created but NOT applied yet
-- User wants accounting to match their manual process (see PDF)
-- Need to understand their current workflow before proceeding
+- OpenAI key added to Vercel but deployment blocked by monorepo issue
+- All meditation components use 'use client' directive properly
+- TypeScript strict mode enforced throughout
+- Ready for Railway deployment tomorrow
 
 ## Remember
 - Always use port 3001 for this project

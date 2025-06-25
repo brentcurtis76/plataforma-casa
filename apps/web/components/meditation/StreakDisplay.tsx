@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Card } from '@/lib/ui';
+import { Card } from '@church-admin/ui';
 import { Flame, TrendingUp, Calendar, Award } from 'lucide-react';
 import { getStreak, getSessionStats } from '@/lib/services/meditation-extras';
 

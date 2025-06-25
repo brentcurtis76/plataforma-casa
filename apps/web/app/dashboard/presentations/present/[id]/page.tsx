@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
-import { Button } from '@/lib/ui';
+import { Button } from '@church-admin/ui';
 import { ArrowLeft, ArrowRight, X, Expand, Minimize } from 'lucide-react';
 
 interface Slide {

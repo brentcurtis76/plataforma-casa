@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button, Card } from '@/lib/ui';
+import { Button, Card } from '@church-admin/ui';
 import { ChevronLeft, Heart, BookOpen, Calendar, Share2, Trash2 } from 'lucide-react';
 import { getFavorites, removeFavorite } from '@/lib/services/meditation-extras';
 import Link from 'next/link';

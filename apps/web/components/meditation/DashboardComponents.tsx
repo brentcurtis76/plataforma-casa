@@ -1,6 +1,6 @@
 'use client';
 
-import { Card } from '@/lib/ui';
+import { Card } from '@church-admin/ui';
 import { EMOTIONS } from '@/lib/ai/scripture-selector';
 
 interface DashboardRecommendationsProps {

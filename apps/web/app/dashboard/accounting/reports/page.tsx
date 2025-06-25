@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/lib/ui'
-import { Button } from '@/lib/ui'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@church-admin/ui'
+import { Button } from '@church-admin/ui'
 import { Download, Calendar, TrendingUp, TrendingDown } from 'lucide-react'
 import Link from 'next/link'
 import { IncomeStatement } from '@/components/accounting/IncomeStatement'

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button, Card } from '@/lib/ui';
+import { Button, Card } from '@church-admin/ui';
 import { EMOTIONS } from '@/lib/ai/scripture-selector';
 import { 
   Heart, 

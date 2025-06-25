@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
-import { Button, Card } from '@/lib/ui';
+import { Button, Card } from '@church-admin/ui';
 import { EMOTIONS } from '@/lib/ai/scripture-selector';
 import { generateMeditationAudio, MEDITATION_VOICES } from '@/lib/ai/voice-synthesis';
 import { 

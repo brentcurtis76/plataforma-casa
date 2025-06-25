@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Button, Card } from '@/lib/ui';
+import { Button, Card } from '@church-admin/ui';
 import { AlertTriangle, RefreshCw, WifiOff, Clock, Bug } from 'lucide-react';
 
 interface ErrorType {

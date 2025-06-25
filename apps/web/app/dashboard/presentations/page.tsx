@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
-import { Button } from '@/lib/ui';
+import { Button } from '@church-admin/ui';
 import { PlusCircle, Music, Presentation, FileText } from 'lucide-react';
 
 interface Song {
