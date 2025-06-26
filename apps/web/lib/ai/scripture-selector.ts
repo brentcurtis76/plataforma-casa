@@ -1,9 +1,16 @@
 import OpenAI from 'openai';
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Lazy initialize OpenAI client
+let openai: OpenAI | null = null;
+
+function getOpenAI() {
+  if (!openai && process.env.OPENAI_API_KEY) {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  return openai;
+}
 
 export interface ScriptureResult {
   reference: string;
@@ -89,7 +96,12 @@ export async function findScripture(
            "meditationGuide": "complete meditation guide"
          }`;
 
-    const completion = await openai.chat.completions.create({
+    const client = getOpenAI();
+    if (!client) {
+      throw new Error('OpenAI client not initialized');
+    }
+    
+    const completion = await client.chat.completions.create({
       model: "gpt-4",
       messages: [
         { role: "system", content: systemPrompt },
