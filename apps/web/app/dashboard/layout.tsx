@@ -27,42 +27,49 @@ export default async function DashboardLayout({
     .single()
 
   return (
-    <>
+    <div style={{ fontFamily: 'Mont, Montserrat, sans-serif' }}>
       <SkipLinks />
-      <div className="min-h-screen bg-gray-50 flex">
+      <div className="min-h-screen bg-white flex">
         <Sidebar />
         
         <div className="flex-1 flex flex-col">
-          <header className="bg-white shadow-sm border-b border-gray-200">
-            <div className="px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between items-center py-4">
+          <header className="bg-white shadow-sm border-b border-gray-100">
+            <div className="px-8">
+              <div className="flex justify-between items-center py-6">
                 <div>
-                  <h1 className="text-2xl font-semibold text-gray-900">
-                    {profile?.organization?.name || 'Church Admin'}
+                  <h1 className="text-3xl font-light text-black tracking-tight">
+                    Plataforma de Administración
                   </h1>
-                  <p className="text-sm text-gray-600">
-                    {profile?.full_name || user.email}
+                  <p className="text-sm text-gray-600 font-light mt-1">
+                    Iglesia Anglicana San Andrés
                   </p>
                 </div>
-                <form action="/api/auth/logout" method="post">
-                  <button
-                    type="submit"
-                    className="text-sm text-gray-700 hover:text-gray-900 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
-                  >
-                    Cerrar sesión
-                  </button>
-                </form>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                    <span className="text-white font-medium text-sm">
+                      {(profile?.full_name || user.email)?.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
+                  <form action="/api/auth/logout" method="post">
+                    <button
+                      type="submit"
+                      className="text-sm font-medium text-gray-700 hover:text-black px-6 py-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition-all duration-200"
+                    >
+                      Cerrar sesión
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </header>
           
-          <main className="flex-1 p-6" id="main-content">
+          <main className="flex-1 p-8" id="main-content">
             <div className="max-w-7xl mx-auto">
               {children}
             </div>
           </main>
         </div>
       </div>
-    </>
+    </div>
   )
 }

@@ -1,13 +1,13 @@
 import { Header } from '@/components/church/Header'
-import { Hero } from '@/components/church/Hero'
+import { ModernHero } from '@/components/church/ModernHero'
 import { Footer } from '@/components/church/Footer'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: 'Mont, Montserrat, sans-serif' }}>
+    <div className="min-h-screen flex flex-col">
       <Header />
       <main className="pt-0">
-        <Hero />
+        <ModernHero />
         
         {/* Sentido & Propósito */}
         <section id="proposito" className="py-16 bg-white">
