@@ -10,7 +10,8 @@
     "type-check": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "reports": "node scripts/view-reports.js"
   },
   "dependencies": {
     "@church-admin/shared": "workspace:*",
