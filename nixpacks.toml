@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["nodejs"]
+nixPkgs = ["nodejs_22"]
 
 [phases.install]
 cmds = ["corepack enable", "corepack prepare pnpm@8.15.1 --activate", "pnpm install --frozen-lockfile"]
