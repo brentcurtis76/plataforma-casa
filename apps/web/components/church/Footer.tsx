@@ -16,30 +16,32 @@ function Footer() {
   }
 
   return (
-    <footer className="bg-black text-white">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="bg-gradient-to-br from-gray-900 to-black text-white">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Organization Info */}
           <div className="col-span-1">
-            <h3 className="text-xl font-bold mb-4">CASA</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="text-2xl font-light mb-6 tracking-wide" style={{ fontFamily: 'Mont, Montserrat, sans-serif' }}>CASA</h3>
+            <p className="text-gray-300 leading-relaxed mb-4">
               Un lugar de amor incondicional y gracia transformadora.
             </p>
+            <div className="w-16 h-px bg-white opacity-50"></div>
           </div>
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-medium uppercase tracking-wider mb-6 text-gray-400">
               Enlaces Rápidos
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {navigation.main.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-gray-300 hover:text-white text-sm transition-colors"
+                    className="text-gray-300 hover:text-white transition-all duration-200 relative group inline-block"
                   >
                     {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-200 group-hover:w-full"></span>
                   </a>
                 </li>
               ))}
@@ -48,34 +50,52 @@ function Footer() {
 
           {/* Schedule */}
           <div className="col-span-1">
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-medium uppercase tracking-wider mb-6 text-gray-400">
               Horarios
             </h4>
-            <ul className="space-y-2">
-              <li className="text-gray-300 text-sm">
-                <span className="font-medium">Domingo:</span> 10:00 AM
-                <span className="block text-xs">Servicio Principal</span>
-              </li>
-            </ul>
+            <div className="space-y-4">
+              <div className="text-gray-300">
+                <div className="flex justify-between items-center mb-1">
+                  <span className="font-medium">Domingo</span>
+                  <span className="text-white">10:00 AM</span>
+                </div>
+                <span className="text-xs text-gray-400">Servicio Principal</span>
+              </div>
+              <div className="text-gray-300">
+                <div className="flex justify-between items-center mb-1">
+                  <span className="font-medium">Miércoles</span>
+                  <span className="text-white">7:00 PM</span>
+                </div>
+                <span className="text-xs text-gray-400">Estudio Bíblico</span>
+              </div>
+            </div>
           </div>
 
           {/* Contact */}
           <div className="col-span-1">
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-medium uppercase tracking-wider mb-6 text-gray-400">
               Contacto
             </h4>
-            <ul className="space-y-2 text-gray-300 text-sm">
-              <li>Santiago, Chile</li>
-              <li>
-                <a href="mailto:info@casa.cl" className="hover:text-white transition-colors">
+            <div className="space-y-3 text-gray-300">
+              <div className="flex items-start gap-2">
+                <span className="text-xs mt-1">📍</span>
+                <span>Santiago, Chile</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-xs mt-1">📧</span>
+                <a href="mailto:info@casa.cl" className="hover:text-white transition-colors hover:underline">
                   info@casa.cl
                 </a>
-              </li>
-            </ul>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-xs mt-1">📞</span>
+                <span>+56 9 1234 5678</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} CASA. Todos los derechos reservados.
@@ -85,10 +105,10 @@ function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-all duration-200 hover:scale-105"
                 >
                   <span className="sr-only">{item.name}</span>
-                  <span className="text-sm">{item.name}</span>
+                  <span className="text-sm font-medium">{item.name}</span>
                 </a>
               ))}
             </div>

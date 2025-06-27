@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 interface LogoProps {
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
   className?: string
   showFallback?: boolean
 }
@@ -15,19 +15,22 @@ export function Logo({ size = 'md', className = '', showFallback = true }: LogoP
   const sizeClasses = {
     sm: 'w-8 h-8',
     md: 'w-10 h-10', 
-    lg: 'w-12 h-12'
+    lg: 'w-16 h-16',
+    xl: 'w-20 h-20'
   }
   
   const sizePixels = {
     sm: 32,
     md: 40,
-    lg: 48
+    lg: 64,
+    xl: 80
   }
   
   const fallbackClasses = {
     sm: 'text-sm',
     md: 'text-lg',
-    lg: 'text-xl'
+    lg: 'text-2xl',
+    xl: 'text-3xl'
   }
 
   // Try to load the actual logo file

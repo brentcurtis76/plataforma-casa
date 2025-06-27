@@ -61,13 +61,11 @@ export function Sidebar() {
         <div className="flex flex-col h-full">
           {/* Logo/Header */}
           <div className="px-6 py-8 border-b border-gray-100">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <Logo size="md" />
-              </div>
+            <div className="flex items-center justify-center relative">
+              <Logo size="lg" />
               <button
                 onClick={() => setCollapsed(!collapsed)}
-                className="hidden md:block p-2 hover:bg-gray-50 rounded-xl transition-colors"
+                className="hidden md:block absolute right-0 p-2 hover:bg-gray-50 rounded-xl transition-colors"
               >
                 {collapsed ? <ChevronRight className="h-5 w-5 text-gray-600" /> : <ChevronLeft className="h-5 w-5 text-gray-600" />}
               </button>

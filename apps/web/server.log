@@ -1,0 +1,51 @@
+
+> @church-admin/web@0.1.0 dev
+> next dev -p 3001 -p 3001
+
+   ▲ Next.js 15.3.4
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.1.202:3001
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1375ms
+ ✓ Compiled /middleware in 296ms (108 modules)
+Middleware called for: /
+ ○ Compiling / ...
+ ✓ Compiled / in 2.4s (832 modules)
+ GET / 200 in 2611ms
+ ✓ Compiled in 321ms (355 modules)
+Middleware called for: /auth/login
+ ○ Compiling /auth/login ...
+ ✓ Compiled /auth/login in 758ms (948 modules)
+ GET /auth/login 200 in 983ms
+Middleware called for: /_next/static/css/app/layout.css
+Middleware called for: /_next/static/chunks/webpack.js
+Middleware called for: /_next/static/chunks/main-app.js
+Middleware called for: /_next/static/chunks/app-pages-internals.js
+Middleware called for: /_next/static/chunks/app/auth/login/page.js
+Middleware called for: /_next/static/chunks/app/layout.js
+Middleware called for: /auth/login
+ GET /auth/login 200 in 65ms
+Middleware called for: /_next/static/css/app/layout.css
+Middleware called for: /_next/static/chunks/webpack.js
+Middleware called for: /_next/static/chunks/main-app.js
+Middleware called for: /_next/static/chunks/app-pages-internals.js
+Middleware called for: /_next/static/chunks/app/layout.js
+Middleware called for: /_next/static/chunks/app/auth/login/page.js
+Middleware called for: /auth/forgot-password
+Middleware called for: /_next/static/webpack/1cfe82829435e6bb.webpack.hot-update.json
+Middleware called for: /_next/static/webpack/webpack.1cfe82829435e6bb.hot-update.js
+ ✓ Compiled /_not-found in 334ms (952 modules)
+ GET /auth/forgot-password 404 in 391ms
+Middleware called for: /auth/forgot-password
+ GET /auth/forgot-password 404 in 38ms
+Middleware called for: /_next/static/css/app/layout.css
+Middleware called for: /_next/static/chunks/webpack.js
+Middleware called for: /_next/static/chunks/app/layout.js
+Middleware called for: /_next/static/chunks/app-pages-internals.js
+Middleware called for: /_next/static/chunks/main-app.js
+ ✓ Compiled in 103ms (108 modules)
+   Reload env: .env.local
+ ✓ Compiled in 134ms (1060 modules)
+[?25h

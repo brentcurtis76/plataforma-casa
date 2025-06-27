@@ -7,11 +7,14 @@ export function ModernHero() {
   const heroStyle = { fontFamily: 'Mont, Montserrat, sans-serif' }
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white" style={heroStyle}>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white" style={heroStyle}>
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-black rounded-full mix-blend-multiply filter blur-3xl opacity-3 animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-900 rounded-full mix-blend-multiply filter blur-3xl opacity-2 animate-pulse" />
-        <div className="absolute top-40 left-40 w-96 h-96 bg-black rounded-full mix-blend-multiply filter blur-3xl opacity-4 animate-pulse" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-gray-900 to-black rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse-slow" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-gray-800 to-gray-900 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse-slow animation-delay-200" />
+        <div className="absolute top-40 left-40 w-96 h-96 bg-gradient-to-bl from-black to-gray-900 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-pulse-slow animation-delay-100" />
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_50%_50%_at_center,black_40%,transparent_80%)]"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 max-w-7xl">
@@ -70,48 +73,65 @@ export function ModernHero() {
 
           <div className="relative">
             <div className="relative w-full h-[600px]">
-              <div className="absolute top-10 left-10 w-80 h-48 bg-white rounded-2xl shadow-lg border border-gray-100 p-8 transform hover:scale-105 transition-all duration-300">
+              <div className="absolute top-10 left-10 w-80 h-48 bg-white rounded-2xl shadow-xl border border-gray-100 p-8 transform hover:scale-105 transition-all duration-300 animate-fade-in">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-gray-900 to-black rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-white font-bold text-lg">$</span>
                   </div>
                   <h4 className="font-medium text-black text-lg">Contabilidad</h4>
                 </div>
                 <div className="space-y-3">
-                  <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full w-3/4 bg-black rounded-full" />
+                  <div className="flex justify-between text-sm text-gray-600 mb-1">
+                    <span>Ingresos</span>
+                    <span>$2.4M</span>
                   </div>
                   <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full w-1/2 bg-gray-600 rounded-full" />
+                    <div className="h-full w-3/4 bg-gradient-to-r from-gray-800 to-black rounded-full" />
+                  </div>
+                  <div className="flex justify-between text-sm text-gray-600 mb-1">
+                    <span>Gastos</span>
+                    <span>$1.2M</span>
+                  </div>
+                  <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-full w-1/2 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full" />
                   </div>
                 </div>
               </div>
 
-              <div className="absolute top-32 right-5 w-72 h-40 bg-white rounded-2xl shadow-lg border border-gray-100 p-8 transform hover:scale-105 transition-all duration-300">
+              <div className="absolute top-32 right-5 w-72 h-40 bg-white rounded-2xl shadow-xl border border-gray-100 p-8 transform hover:scale-105 transition-all duration-300 animate-fade-in animation-delay-100">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg">
                     <Sparkles className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="font-medium text-black text-lg">Meditación IA</h4>
                 </div>
-                <p className="text-sm text-gray-600">Guías personalizadas con escrituras</p>
+                <p className="text-sm text-gray-600 mb-3">Guías personalizadas con escrituras</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs text-gray-500">Sesión activa</span>
+                </div>
               </div>
 
-              <div className="absolute bottom-20 left-5 w-64 h-36 bg-white rounded-2xl shadow-lg border border-gray-100 p-6 transform hover:scale-105 transition-all duration-300">
+              <div className="absolute bottom-20 left-5 w-64 h-36 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 transform hover:scale-105 transition-all duration-300 animate-fade-in animation-delay-200">
                 <div className="flex items-center gap-4 mb-3">
-                  <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-700 rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-white text-xl">📊</span>
                   </div>
                   <h4 className="font-medium text-black text-lg">Presentaciones</h4>
                 </div>
-                <div className="flex gap-2 mt-4">
-                  <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-xs font-medium">Canciones</span>
-                  <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-xs font-medium">Versículos</span>
+                <div className="space-y-2">
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-800 rounded-lg text-xs font-medium border border-blue-200">Canciones</span>
+                    <span className="px-3 py-1 bg-gradient-to-r from-purple-50 to-pink-50 text-purple-800 rounded-lg text-xs font-medium border border-purple-200">Versículos</span>
+                  </div>
+                  <div className="text-xs text-gray-500">24 presentaciones listas</div>
                 </div>
               </div>
 
-              <div className="absolute top-0 right-20 w-24 h-24 bg-black rounded-full blur-2xl opacity-10" />
-              <div className="absolute bottom-10 right-40 w-32 h-32 bg-gray-900 rounded-full blur-3xl opacity-5" />
+              {/* Enhanced decorative elements */}
+              <div className="absolute top-0 right-20 w-24 h-24 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full blur-2xl opacity-20 animate-pulse-slow" />
+              <div className="absolute bottom-10 right-40 w-32 h-32 bg-gradient-to-tr from-blue-600 to-cyan-600 rounded-full blur-3xl opacity-15 animate-pulse-slow animation-delay-300" />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-gray-200 to-gray-100 rounded-full blur-3xl opacity-30" />
             </div>
           </div>
         </div>

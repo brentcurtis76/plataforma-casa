@@ -14,12 +14,18 @@ export default function HomePage() {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <div className="bg-gray-200 rounded-lg aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="https://raw.githubusercontent.com/brentcurtis76/casa-web/main/public/lovable-uploads/4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d.png" 
-                    alt="Propósito CASA" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg aspect-[4/3] overflow-hidden relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center space-y-4 p-8">
+                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                        <span className="text-2xl">✨</span>
+                      </div>
+                      <h3 className="text-xl font-light text-gray-800">Propósito</h3>
+                      <p className="text-sm text-gray-600">Transformando vidas con amor</p>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
               <div className="order-1 lg:order-2 space-y-6">
@@ -53,9 +59,20 @@ export default function HomePage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="space-y-4">
-                <div className="bg-gray-200 rounded-lg aspect-[3/4] overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400"></div>
+              <div className="space-y-4 group">
+                <div className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg aspect-[3/4] overflow-hidden relative hover:shadow-lg transition-all duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center space-y-4">
+                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                        <span className="text-3xl">🙏</span>
+                      </div>
+                      <div className="px-4">
+                        <h4 className="font-medium text-gray-800 mb-2">Liderazgo</h4>
+                        <p className="text-xs text-gray-600">Guía espiritual con sabiduría y compasión</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
                 </div>
                 <div className="text-center">
                   <h3 className="font-medium text-gray-900">Liderazgo Pastoral</h3>
@@ -63,9 +80,20 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="space-y-4">
-                <div className="bg-gray-200 rounded-lg aspect-[3/4] overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400"></div>
+              <div className="space-y-4 group">
+                <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-lg aspect-[3/4] overflow-hidden relative hover:shadow-lg transition-all duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center space-y-4">
+                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                        <span className="text-3xl">📚</span>
+                      </div>
+                      <div className="px-4">
+                        <h4 className="font-medium text-gray-800 mb-2">Formación</h4>
+                        <p className="text-xs text-gray-600">Crecimiento continuo en la fe</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
                 </div>
                 <div className="text-center">
                   <h3 className="font-medium text-gray-900">Equipo de Formación</h3>
@@ -73,9 +101,20 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="space-y-4">
-                <div className="bg-gray-200 rounded-lg aspect-[3/4] overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400"></div>
+              <div className="space-y-4 group">
+                <div className="bg-gradient-to-br from-orange-100 to-red-100 rounded-lg aspect-[3/4] overflow-hidden relative hover:shadow-lg transition-all duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center space-y-4">
+                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                        <span className="text-3xl">🤝</span>
+                      </div>
+                      <div className="px-4">
+                        <h4 className="font-medium text-gray-800 mb-2">Comunidad</h4>
+                        <p className="text-xs text-gray-600">Unidos en amor y servicio</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
                 </div>
                 <div className="text-center">
                   <h3 className="font-medium text-gray-900">Comunidad</h3>
@@ -103,8 +142,19 @@ export default function HomePage() {
                   Conoce más
                 </button>
               </div>
-              <div className="bg-gray-200 rounded-lg aspect-[4/3] overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400"></div>
+              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg aspect-[4/3] overflow-hidden relative group hover:shadow-lg transition-all duration-300">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center space-y-6 p-8">
+                    <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                      <span className="text-4xl">📖</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-medium text-gray-800 mb-3">Formación Espiritual</h4>
+                      <p className="text-sm text-gray-600">Descubre lo sagrado en tu vida diaria</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           </div>
@@ -115,8 +165,19 @@ export default function HomePage() {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <div className="bg-gray-200 rounded-lg aspect-[4/3] overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400"></div>
+                <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-lg aspect-[4/3] overflow-hidden relative group hover:shadow-lg transition-all duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center space-y-6 p-8">
+                      <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                        <span className="text-4xl">🌅</span>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-medium text-gray-800 mb-3">Retiro Espiritual</h4>
+                        <p className="text-sm text-gray-600">Renovación en Semana Santa</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
               <div className="order-1 lg:order-2 space-y-6">

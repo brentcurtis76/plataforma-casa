@@ -102,18 +102,24 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 }
 
-/* Custom fonts */
+/* Custom fonts - Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @font-face {
   font-family: 'Mont';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Mont Regular'), local('Mont-Regular');
+  src: local('Montserrat'), local('Montserrat-Regular');
 }
 
 @font-face {
@@ -121,7 +127,37 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local('Mont Bold'), local('Mont-Bold');
+  src: local('Montserrat Bold'), local('Montserrat-Bold');
+}
+
+/* Animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.1;
+  }
 }
 
 /* Utility classes */
@@ -138,6 +174,10 @@
     animation: slide-up 0.5s ease-out;
   }
   
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+  
   .animation-delay-100 {
     animation-delay: 100ms;
   }
@@ -148,5 +188,10 @@
   
   .animation-delay-300 {
     animation-delay: 300ms;
+  }
+  
+  .gradient-mask {
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
   }
 }
